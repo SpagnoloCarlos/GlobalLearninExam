@@ -1,0 +1,140 @@
+* {
+    margin: 0;
+}
+
+html, body {
+    height: 100%;
+}
+
+body {
+    font-family: Arial, Helvetica, sans-serif;
+    background-color: beige;
+}
+
+header {
+    display: block;
+    position: fixed; /*fija la posicion del header ante el scroll*/
+    top: 0;
+    left: 0;
+    width: 100%;
+    background-color: #f5a4a4;
+    padding: 10px; /*espacio alrededor de cada elemento*/
+}
+
+nav a:visited,
+nav a:link {
+    color: black;
+    text-decoration: none;
+
+}
+
+nav > ul {
+    display: inline;
+    padding: 0;
+
+}
+
+nav > ul > li {
+    display: inline-block;
+    list-style: none;
+    margin: 0 5px 0 5px;
+}
+
+main {
+    display: block;
+    background-image: url("images/background-lineas.jpg");
+    padding-top: 3em; /*em tamaño que ocupa la letra m en la pantalla, es responsive*/
+    padding-bottom: 3em;
+    min-height: 85%;
+}
+
+#logo {
+    max-width: 100%;
+    max-height: 100%;
+}
+
+#banner {
+    max-width: 90%;
+    max-height: 90%;
+}
+
+footer {
+    padding: 15px;
+}
+
+aside, article {
+    padding: 2em;
+}
+
+aside {
+    text-align: center;
+    max-width: 15%;
+}
+
+article {
+    width: 85%;
+}
+
+@media only screen and (min-width: 768px){
+    main {
+        display: flex;
+    }
+
+    aside {
+        margin-left: 2%;
+    }
+}
+
+h1 {
+    font-size: 2em;
+    margin-top: 0.5em;
+}
+
+.subtitle {
+    background-color: burlywood;
+    font-size: 1em;
+    padding: 10px;
+    border: solid 1px;
+    margin-top: 0.5em;
+}
+
+/*----- Catalogo -----*/
+
+.element {
+    width: 250px;
+    padding: 10px;
+    margin: 10px;
+    background-color: #f5a4a4;
+    border: solid 1px;
+}
+
+.imagen-muffin {
+    max-width: 100%;
+    max-height: 75%;
+}
+
+.element-information > .title {
+    font-weight: bold;
+}
+
+.element-information > .price {
+    text-align: right;
+}
+
+.element-information {
+    display: flex;
+    max-width: 100%;
+    justify-content: space-between;
+    margin-bottom: 0.5em;
+}
+
+.element button {
+    background-color: cornsilk;
+    padding: 10px;
+    border: solid 1px cornsilk;
+    border-radius: 5px;
+    margin-top: 0.5em;
+    display: block;
+    margin-left: auto;
+    margin-right: auto;
+}
