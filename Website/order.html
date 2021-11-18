@@ -1,0 +1,104 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Pagina Web de Pasteleria</title>
+    <link rel="stylesheet" href="index.css">
+
+</head>
+<body>
+    <header>
+        <nav>
+            <ul>
+                <li><a href="index.html">Inicio</a></li>
+                <li><a href="catalogo.html">Catalogo</a></li>
+                <li><a href="contacto.html">Contacto</a></li>
+            </ul>
+        </nav>
+    </header>
+
+    <main>
+        <aside>
+            <img id="logo" src="images/logo500.png" alt="Pasteleria Store">
+        </aside>
+        <article class="article-order">
+            
+            <div class="order-info">
+                <div class="order-selected">
+                    <h1 class="order-title">¡Su Pedido!</h1>
+
+                    <img class="tarta-frutilla" src="" alt="tarta-frutilla">
+                        <div class="element-information">
+                            <div class="title">
+                                
+                            </div>
+                            <div class="price">
+                                
+                            </div>
+                        </div>       
+                </div>
+            
+            
+                <form action='https://jkorpela.fi/cgi-bin/echo.cgi' method='POST'>
+                    <h1 class="order-title">Datos Personales</h1>
+                    <div class="input-group">
+                        <div>
+                            <label class="label-datos" for="first-name">Nombre</label>
+                        </div>
+                        <div>
+                            <input class="input-datos" type="text" name="first-name" id="first-name">
+                        </div>
+                        <div>
+                            <label class="label-datos" for="last-name">Apellido</label>
+                        </div>
+                        <div>
+                            <input class="input-datos" type="text" name="last-name" id="last-name">
+                        </div>
+                        <div>
+                            <label class="label-datos" class="label-datos" for="address">Dirección</label>
+                        </div>
+                        <div>
+                            <input class="input-datos" type="text" name="address" id="address">
+                        </div>
+                        <div>
+                            <label class="label-datos" for="email">E-mail</label>
+                        </div>
+                        <div>
+                            <input class="input-datos" type="text" name="email" id="email">
+                        </div>
+                    </div>
+                    <input class="button-form" type="reset" value="Reset">
+                    <input class="button-form" type="submit" value="Order">
+                </form>
+            </div>
+            
+        </article>
+    </main>
+
+    <footer>
+        <nav>
+            <ul>
+                <li><a href="index.html">Inicio</a></li>
+                <li><a href="catalogo.html">Catalogo</a></li>
+                <li><a href="contacto.html">Contacto</a></li>
+            </ul>
+        </nav>
+    </footer>
+</body>
+<script>
+    window.addEventListener("DOMContentLoaded", () => {
+        const order = localStorage.getItem("order");
+        if (order){
+            const catalogOrder = JSON.parse(order);
+            const orderSelected = document.querySelector(".order-selected");
+            orderSelected.querySelector(".title").innerText = catalogOrder.title;
+            orderSelected.querySelector(".price").innerText = catalogOrder.price;
+            const img = orderSelected.querySelector("img");
+            img.setAttribute("src", `images/${catalogOrder.id}.jpg`);
+        }
+
+    });
+</script>
+</html>
