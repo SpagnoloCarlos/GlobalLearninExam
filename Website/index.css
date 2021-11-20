@@ -13,12 +13,12 @@ body {
 
 header {
     display: block;
-    position: fixed; /*fija la posicion del header ante el scroll*/
+    position: fixed;
     top: 0;
     left: 0;
     width: 100%;
     background-color: #fdbaba;
-    padding: 12px; /*espacio alrededor de cada elemento*/
+    padding: 12px;
 }
 
 header > nav > ul > li > a {
@@ -49,13 +49,38 @@ nav > ul > li {
     margin: 0 5px 0 5px;
 }
 
+footer {
+    padding: 15px 0px 5px 0px;
+    background-color: rgb(230, 230, 178);
+    text-align: center;
+}
+
+footer > div > ul {
+    padding: 0;
+}
+
+footer > div > ul > li {
+    display: inline-block;
+    list-style: none;
+    margin: 5px;
+    padding: 5px 20px;
+}
+
+footer > div > ul > li > a > img {
+    margin-top: 0.5em;
+    width: 20px;
+    height: 20px;
+}
+
 main {
     display: block;
     background-image: url("images/background-lineas.jpg");
-    padding-top: 3em; /*em tamaño que ocupa la letra m en la pantalla, es responsive*/
+    padding-top: 3em; 
     padding-bottom: 3em;
     min-height: 85%;
 }
+
+/*----- Index -----*/
 
 #logo {
     max-width: 80%;
@@ -67,44 +92,21 @@ main {
     max-height: 100%;
 }
 
-footer {
-    padding: 15px;
-    background-color: rgb(230, 230, 178);
-    text-align: center;
-}
-
 aside {
     padding: 1em;
     text-align: center;
     max-width: 20%;
+    min-width: 30%;
     height: 20%;
 }
 
-article {
-    padding: 2em;
-    max-width: 85%;
+.article-index {
+    max-width: 100%;
+    padding: 1.5em;
 }
 
-@media only screen and (min-width: 768px){
-    main {
-        display: flex;
-    }
-
-    aside {
-        margin-left: 2%;
-        min-width: 300px;
-    }
-
-    .order-info {
-        display: flex;
-    }
-
-    .order-selected {
-        text-align: center;
-    }
-}
-
-h1 {
+article > h1 {
+    margin: 20px;
     font-size: 2em;
     margin-top: 0.5em;
 }
@@ -117,26 +119,41 @@ h1 {
     margin-top: 0.5em;
 }
 
-
 /*----- Catalogo -----*/
+
+.columns-desktop {
+    min-width: 80%;
+    margin: 10px;
+    padding: 10px;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+}
 
 .element {
     width: 250px;
-    height: 350px;
     padding: 10px;
     margin: 10px;
     background-color: #fdbaba;
     border: solid 1px;
+    border-radius: 15px;
 }
 
 .element > img {
-    max-width: 100%;
+    max-width: 90%;
     max-height: 75%;
     display: block;
     margin-left: auto;
     margin-right: auto;  
     margin-bottom: 0.5em;
     margin-top: 0.4em;  
+}
+
+.element-information {
+    text-align: center;
+    display: flex; 
+    justify-content: space-between;
+    margin: 0.5em;
 }
 
 .element-information > .title {
@@ -147,42 +164,73 @@ h1 {
     text-align: right;
 }
 
-.element-information {
-    text-align: center;
-    display: flex;
-    margin-left: auto;
-    margin-right: auto;
-    justify-content: space-between;
-    margin-bottom: 0.5em;
-}
-
-.element button {
+.button-buy {
     background-color: cornsilk;
     padding: 10px;
-    border: solid 1px cornsilk;
+    border: solid 1px;
     border-radius: 5px;
     margin-top: 0.5em;
     display: block;
     margin-left: auto;
     margin-right: auto;
+    margin-top: 10px;
+    margin-bottom: 10px;
 }
 
-.columns-desktop {
-    display: flex;
+.button-buy:hover {
+    background-color: rgb(252, 241, 200);
+    font-weight: bold;
+}
+
+/*----- Contacto -----*/
+
+.article-contact > div > ul > li > a > img {
+    margin-top: 0.5em;
+    width: 40px;
+    height: 40px;
+}
+
+.article-contact > div > ul > li {
+    display: inline-block;
+    list-style: none;
+    margin: 5px;
+    padding: 5px 20px;
+}
+
+.article-contact > div > ul {
+    padding: 0;
+}
+
+.article-contact > div {
+    text-align: center;
+    padding: 10px;
+    display: block;
+}
+
+.article-contact > p {
+    padding: 10px;
 }
 
 /*----- Order -----*/
 
-.order-info > form{
+.order-info {
+    display: flex;
+    flex-direction: column;
+    flex-wrap: nowrap;
+    align-items: center;
+}
+
+.order-info > div > form{
     padding: 15px;
-    display: block;
-    margin-left: auto;
-    margin-right: auto;
+    display: flex;
+    flex-direction: column;
     text-align: center;
     background-color: #fdbaba7a;
     border-radius: 25px;
     border: solid 1px;
-    margin: 30px;
+    margin: 10px;
+    min-width: 50%;
+    max-height: 480px;
 }
 
 .order-info > form:hover {
@@ -195,15 +243,24 @@ h1 {
     background-color: #fdbaba7a;
     border-radius: 25px;
     border: solid 1px;
-    margin: 30px;
+    margin: 10px;
+    display: flex;
+    flex-direction: column;
 }
 
 .order-selected:hover {
     background-color: #fdbaba;
 }
 
-.article-order {
+.order-selected > a:visited,
+.order-selected > a:link {
+    color: black;
+    text-decoration: none;
+}
+
+.order-article {
     width: 100%;
+    
 }
 
 .order-title {
@@ -214,16 +271,126 @@ h1 {
 
 .order-selected > img {
     margin: 0.5em;
+    max-width: 100%;
+}
+
+.button-in-row {
+    padding: 8px;
+    display: flex;
+    justify-content: center;
+    width: 200px;
+    margin-left: auto;
+    margin-right: auto;
 }
 
 /*----- Formulario -----*/
 
-.input-datos {
+.input-date {
     margin: 0.5em;
     border-radius: 5px;
+    width: 80%;
+}
+
+#input-large {
+    width: 60%;
+}
+
+#input-small {
+    width: 40%;
 }
 
 .button-form {
-    margin: 30px 20px 30px 20px;
-    width: 75px;
+    margin: 10px;
+    width: 100px;
+    height: 30px;
+    background-color: cornsilk;
+    border: solid 1px;
+    border-radius: 5px;
+}
+
+.button-form:hover {
+    background-color: rgb(252, 241, 200);
+    border: solid 1px;
+    font-weight: bold;
+}
+
+.two-in-row {
+    display: flex;
+    flex-direction: row;
+    flex-wrap: wrap;
+    justify-content: center;
+}
+.two-in-row > div {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+}
+
+@media only screen and (min-width: 768px){
+    main {
+        display: flex;
+    }
+
+    aside {
+        min-width: 300px;
+    }
+
+    article {
+        max-width: 100%;
+        padding: 1.5em;
+    }
+
+    /*----- Contacto -----*/
+
+    .article-contact > p {
+        padding: 10px;
+    }
+
+    /*----- Order -----*/
+
+    .order-info {
+        display: flex;
+        flex-direction: row;
+        flex-wrap: nowrap;
+        justify-content: start;
+        align-items: baseline;
+    }
+
+    .order-selected {
+        text-align: center;
+        width: 200px;
+        min-width: 160px;
+        display: flex;
+        flex-direction: column;
+    }
+
+    .article-order {
+        width: 100%;
+        padding: 1.5em;
+    }
+
+    .order-info > div > form{
+        max-width: 100%;
+        max-height: 480px;
+        
+    }
+
+    /*----- Catálogo -----*/
+
+    .element {
+        max-width: 26%;
+        min-width: 150px;
+        min-height: 340px;
+        display: flex;
+        flex-direction: column;
+        justify-content: space-between;
+    }
+
+    .columns-desktop {
+        max-width: 100%;
+        display: flex;
+        flex-direction: row;
+        flex-wrap: wrap;
+        justify-content: space-around;
+    }
 }
