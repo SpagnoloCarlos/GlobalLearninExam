@@ -233,7 +233,7 @@ article > h1 {
     max-height: 480px;
 }
 
-.order-info > form:hover {
+.order-info > div > form:hover {
     background-color: #fdbaba;
 }
 
