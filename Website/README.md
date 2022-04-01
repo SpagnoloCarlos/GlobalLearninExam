@@ -2,4 +2,5 @@
 
 This is a frontend project that I presented as an exam.
 
-https://www.recetasderechupete.com/wp-content/uploads/2019/07/Tarta-de-crema-y-frutas.jpg
+![img]
+(https://www.recetasderechupete.com/wp-content/uploads/2019/07/Tarta-de-crema-y-frutas.jpg)
